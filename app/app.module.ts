@@ -1,32 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from '@app/app.controller';
-import { classesRepoProvider, getClassesProvider } from '@app/class/class.providers';
-import { getRacesProvider, racesRepoProvider } from '@app/race/race.providers';
-import { backstoryRepoProvider, getBackstoriesProvider } from '@app/backstory/backstory.providers';
-import {
-  characterRepoProvider,
-  getCharacterProvider,
-  setCharacterBackstoryProvider,
-  setCharacterClassProvider,
-  setCharacterRaceProvider,
-} from '@app/character/character.providers';
-import { AppService } from '@app/app.service';
+
+import { BackstoryModule } from './backstory/backstory.module';
+import { RaceModule } from './race/race.module';
+import { ClassModule } from './class/class.module';
+import { CharacterModule } from './character/character.module';
 
 @Module({
-  controllers: [AppController],
-  providers: [
-    classesRepoProvider,
-    getClassesProvider,
-    racesRepoProvider,
-    getRacesProvider,
-    backstoryRepoProvider,
-    getBackstoriesProvider,
-    characterRepoProvider,
-    getCharacterProvider,
-    setCharacterRaceProvider,
-    setCharacterClassProvider,
-    setCharacterBackstoryProvider,
-    AppService,
-  ]
+  controllers: [],
+  providers: [],
+  imports: [BackstoryModule, RaceModule, ClassModule, CharacterModule],
 })
 export class AppModule {}
