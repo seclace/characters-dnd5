@@ -10,6 +10,6 @@ export enum EStatType {
 export class Stat {
   constructor(
     private readonly type: EStatType,
-    private readonly value: number
+    private readonly value: number,
   ) {}
 }

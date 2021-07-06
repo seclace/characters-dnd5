@@ -7,7 +7,7 @@ export const BackstoryRepoSymbol = Symbol('BackstoryRepo');
 export const backstoryRepoProvider: Provider = {
   provide: BackstoryRepoSymbol,
   useClass: InMemoryBackstoryRepository,
-}
+};
 
 export const GetBackstoriesSymbol = Symbol('GetBackstories');
 export const getBackstoriesProvider: Provider = {
@@ -16,4 +16,4 @@ export const getBackstoriesProvider: Provider = {
     return new GetAllBackstoriesUseCase(classExtractor);
   },
   inject: [BackstoryRepoSymbol],
-}
+};

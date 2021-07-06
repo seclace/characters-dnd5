@@ -4,5 +4,8 @@ import { CharacterId } from '../../domain/character/character';
 import { CharacterNotFoundError } from '../character/error/character-not-found.error';
 
 export interface SetCharacterRace {
-  execute(charId: CharacterId, raceId: RaceId): Promise<void | CharacterNotFoundError>;
+  execute(
+    charId: CharacterId,
+    raceId: RaceId,
+  ): Promise<void | CharacterNotFoundError>;
 }

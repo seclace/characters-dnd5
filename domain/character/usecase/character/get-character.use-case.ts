@@ -4,11 +4,11 @@ import { GetCharacter } from '@character/usecase/character/get-character';
 import { CharacterExtractor } from '@character/usecase/character/character-extractor';
 
 export class GetCharacterUseCase implements GetCharacter {
-  constructor(
-    private readonly characterExtractor: CharacterExtractor,
-  ) {}
+  constructor(private readonly characterExtractor: CharacterExtractor) {}
 
-  async execute(charId: CharacterId): Promise<Character | CharacterNotFoundError> {
+  async execute(
+    charId: CharacterId,
+  ): Promise<Character | CharacterNotFoundError> {
     const character = await this.characterExtractor.getById(charId);
     if (!character) {
       return new CharacterNotFoundError();

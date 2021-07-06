@@ -1,12 +1,12 @@
-export type AbilityName = string
-export type AbilityDescription = string
-export type AbilityLevel = string
-export type AbilityTarget = 'self' | 'agreed' | 'enemy' | 'any'
-export type AbilityUseTime = string
-export type AbilitySchool = string
-export type AbilityDistance = number
-export type AbilityEffectDuration = number
-export type AbilityComponent = string
+export type AbilityName = string;
+export type AbilityDescription = string;
+export type AbilityLevel = string;
+export type AbilityTarget = 'self' | 'agreed' | 'enemy' | 'any';
+export type AbilityUseTime = string;
+export type AbilitySchool = string;
+export type AbilityDistance = number;
+export type AbilityEffectDuration = number;
+export type AbilityComponent = string;
 
 export class Ability {
   private constructor(

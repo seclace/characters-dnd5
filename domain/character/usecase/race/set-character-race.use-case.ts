@@ -14,7 +14,10 @@ export class SetCharacterRaceUseCase implements SetCharacterRace {
     private readonly characterPersistor: CharacterPersistor,
   ) {}
 
-  async execute(charId: CharacterId, raceId: RaceId): Promise<void | CharacterNotFoundError> {
+  async execute(
+    charId: CharacterId,
+    raceId: RaceId,
+  ): Promise<void | CharacterNotFoundError> {
     const character = await this.characterExtractor.getById(charId);
     if (!character) {
       return new CharacterNotFoundError();

@@ -3,7 +3,9 @@ import { CharacterRaceExtractor } from '@character/usecase/race/character-race-e
 import { Race, RaceId } from '../../domain/race/race';
 import { RaceExtractor } from '../../usecase/race/race-extractor';
 
-export class InMemoryRaceRepository implements RaceExtractor, CharacterRaceExtractor {
+export class InMemoryRaceRepository
+  implements RaceExtractor, CharacterRaceExtractor
+{
   private races: Map<RaceId, Race> = new Map<RaceId, Race>();
 
   async getById(raceId: RaceId): Promise<Race | undefined> {

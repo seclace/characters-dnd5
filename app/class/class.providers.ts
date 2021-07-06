@@ -7,7 +7,7 @@ export const ClassesRepoSymbol = Symbol('ClassesRepo');
 export const classesRepoProvider: Provider = {
   provide: ClassesRepoSymbol,
   useClass: InMemoryClassRepository,
-}
+};
 
 export const GetClassesSymbol = Symbol('GetClasses');
 export const getClassesProvider: Provider = {
@@ -16,4 +16,4 @@ export const getClassesProvider: Provider = {
     return new GetAllClassesUseCase(classExtractor);
   },
   inject: [ClassesRepoSymbol],
-}
+};

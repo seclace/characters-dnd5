@@ -28,6 +28,6 @@ export enum ESkillType {
 export class Skill {
   constructor(
     private readonly type: ESkillType,
-    private readonly value: number
+    private readonly value: number,
   ) {}
 }

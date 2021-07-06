@@ -7,7 +7,7 @@ export const RacesRepoSymbol = Symbol('RacesRepo');
 export const racesRepoProvider: Provider = {
   provide: RacesRepoSymbol,
   useClass: InMemoryRaceRepository,
-}
+};
 
 export const GetRacesSymbol = Symbol('GetRaces');
 export const getRacesProvider: Provider = {
@@ -16,4 +16,4 @@ export const getRacesProvider: Provider = {
     return new GetAllRacesUseCase(classExtractor);
   },
   inject: [RacesRepoSymbol],
-}
+};

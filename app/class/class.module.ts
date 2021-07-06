@@ -6,14 +6,7 @@ import { classesRepoProvider, getClassesProvider } from './class.providers';
 
 @Module({
   controllers: [ClassController],
-  providers: [
-    ClassService,
-    classesRepoProvider,
-    getClassesProvider,
-  ],
-  exports: [
-    classesRepoProvider,
-    getClassesProvider,
-  ],
+  providers: [ClassService, classesRepoProvider, getClassesProvider],
+  exports: [classesRepoProvider, getClassesProvider],
 })
 export class ClassModule {}

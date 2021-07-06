@@ -14,7 +14,10 @@ export class SetCharacterBackstoryUseCase implements SetCharacterBackstory {
     private readonly characterPersistor: CharacterPersistor,
   ) {}
 
-  async execute(charId: CharacterId, backstoryId: BackstoryId): Promise<void | CharacterNotFoundError> {
+  async execute(
+    charId: CharacterId,
+    backstoryId: BackstoryId,
+  ): Promise<void | CharacterNotFoundError> {
     const character = await this.characterExtractor.getById(charId);
     if (!character) {
       return new CharacterNotFoundError();

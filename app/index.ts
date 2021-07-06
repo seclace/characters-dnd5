@@ -10,5 +10,4 @@ export async function startServer() {
   await app.listen(port);
 }
 
-startServer()
-  .catch(console.error);
+startServer().catch(console.error);
