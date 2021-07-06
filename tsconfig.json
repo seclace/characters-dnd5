@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "paths": {
+      "@app/*": ["./app/*"],
+      "@common/*": ["./common/*"],
+      "@ability/*": ["./domain/ability/*"],
+      "@backstory/*": ["./domain/backstory/*"],
+      "@character/*": ["./domain/character/*"],
+      "@class/*": ["./domain/class/*"],
+      "@inventory/*": ["./domain/inventory/*"],
+      "@race/*": ["./domain/race/*"],
+      "@stat/*": ["./domain/stat/*"],
+    },
+  },
+}
