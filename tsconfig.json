@@ -12,7 +12,7 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@app/*": ["./app/*"],
+      "@app/*": ["./back/*"],
       "@common/*": ["./common/*"],
       "@ability/*": ["./domain/ability/*"],
       "@backstory/*": ["./domain/backstory/*"],

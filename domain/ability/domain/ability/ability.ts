@@ -20,4 +20,8 @@ export class Ability {
     private readonly effectDuration: AbilityEffectDuration,
     private readonly components: AbilityComponent[],
   ) {}
+
+  getLevel(): AbilityLevel {
+    return this.level;
+  }
 }

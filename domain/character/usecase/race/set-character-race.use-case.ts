@@ -1,11 +1,11 @@
 import { RaceId } from '@race/domain/race/race';
 
 import { SetCharacterRace } from './set-character-race';
-import { CharacterId } from '../../domain/character/character';
 import { CharacterRaceExtractor } from './character-race-extractor';
 import { CharacterPersistor } from '../character/character-persistor';
 import { CharacterExtractor } from '../character/character-extractor';
 import { CharacterNotFoundError } from '../character/error/character-not-found.error';
+import { CharacterId } from '@character/domain/character/character-id';
 
 export class SetCharacterRaceUseCase implements SetCharacterRace {
   constructor(

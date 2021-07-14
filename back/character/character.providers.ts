@@ -12,6 +12,10 @@ import { ClassExtractor } from '@class/usecase/class/class/class-extractor';
 import { SetCharacterBackstoryUseCase } from '@character/usecase/backstory/set-character-backstory.use-case';
 import { BackstoryExtractor } from '@backstory/usecase/backstory/backstory-extractor';
 import { BackstoryRepoSymbol } from '@app/backstory/backstory.providers';
+import { CreateCharacterUseCase } from '@character/usecase/character/create-character.use-case';
+import { InMemoryCharacterIdGenerator } from '@character/persistence/character/in-memory-character-id-generator';
+import { CharacterIdGenerator } from '@character/domain/character/character-id';
+import { GetAllCharactersUseCase } from '@character/usecase/character/get-all-characters.use-case';
 
 export const CharacterRepoSymbol = Symbol('CharacterRepo');
 export const characterRepoProvider: Provider = {
@@ -77,4 +81,46 @@ export const setCharacterBackstoryProvider: Provider = {
     );
   },
   inject: [BackstoryRepoSymbol, CharacterRepoSymbol, CharacterRepoSymbol],
+};
+
+export const CharacterIdGeneratorSymbol = Symbol('CharacterIdGenerator');
+export const characterIdGeneratorProvider: Provider = {
+  provide: CharacterIdGeneratorSymbol,
+  useClass: InMemoryCharacterIdGenerator,
+};
+
+export const CreateCharacterSymbol = Symbol('CreateCharacter');
+export const createCharacterProvider: Provider = {
+  provide: CreateCharacterSymbol,
+  useFactory: (
+    characterPersistor: CharacterPersistor,
+    raceExtractor: RaceExtractor,
+    classExtractor: ClassExtractor,
+    backstoryExtractor: BackstoryExtractor,
+    idGenerator: CharacterIdGenerator,
+  ) => {
+    return new CreateCharacterUseCase(
+      characterPersistor,
+      raceExtractor,
+      classExtractor,
+      backstoryExtractor,
+      idGenerator,
+    );
+  },
+  inject: [
+    CharacterRepoSymbol,
+    RacesRepoSymbol,
+    ClassesRepoSymbol,
+    BackstoryRepoSymbol,
+    CharacterIdGeneratorSymbol,
+  ],
+};
+
+export const GetAllCharactersSymbol = Symbol('GetAllCharacters');
+export const getAllCharactersProvider: Provider = {
+  provide: GetAllCharactersSymbol,
+  useFactory: (characterPersistor: CharacterExtractor) => {
+    return new GetAllCharactersUseCase(characterPersistor);
+  },
+  inject: [CharacterRepoSymbol],
 };

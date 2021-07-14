@@ -1,11 +1,11 @@
 import { ClassId } from '@class/domain/class/class';
 
 import { SetCharacterClass } from './set-character-class';
-import { CharacterId } from '../../domain/character/character';
 import { CharacterClassExtractor } from './character-class-extractor';
 import { CharacterPersistor } from '../character/character-persistor';
 import { CharacterExtractor } from '../character/character-extractor';
 import { CharacterNotFoundError } from '../character/error/character-not-found.error';
+import { CharacterId } from '@character/domain/character/character-id';
 
 export class SetCharacterClassUseCase implements SetCharacterClass {
   constructor(

@@ -1,11 +1,11 @@
 import { BackstoryId } from '@backstory/domain/backstory/backstory';
 
 import { SetCharacterBackstory } from './set-character-backstory';
-import { CharacterId } from '../../domain/character/character';
 import { CharacterBackstoryExtractor } from './character-backstory-extractor';
 import { CharacterPersistor } from '../character/character-persistor';
 import { CharacterExtractor } from '../character/character-extractor';
 import { CharacterNotFoundError } from '../character/error/character-not-found.error';
+import { CharacterId } from '@character/domain/character/character-id';
 
 export class SetCharacterBackstoryUseCase implements SetCharacterBackstory {
   constructor(

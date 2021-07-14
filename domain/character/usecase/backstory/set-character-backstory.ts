@@ -1,7 +1,7 @@
 import { ClassId } from '@class/domain/class/class';
 
-import { CharacterId } from '../../domain/character/character';
 import { CharacterNotFoundError } from '../character/error/character-not-found.error';
+import { CharacterId } from '@character/domain/character/character-id';
 
 export interface SetCharacterBackstory {
   execute(

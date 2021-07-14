@@ -1,10 +1,11 @@
 import { Module } from '@nestjs/common';
 import {
-  characterRepoProvider,
+  characterIdGeneratorProvider,
+  characterRepoProvider, createCharacterProvider, getAllCharactersProvider,
   getCharacterProvider,
   setCharacterBackstoryProvider,
   setCharacterClassProvider,
-  setCharacterRaceProvider,
+  setCharacterRaceProvider
 } from '@app/character/character.providers';
 import { RaceModule } from '@app/race/race.module';
 import { ClassModule } from '@app/class/class.module';
@@ -23,6 +24,9 @@ import { CharacterService } from './character.service';
     setCharacterRaceProvider,
     setCharacterClassProvider,
     setCharacterBackstoryProvider,
+    characterIdGeneratorProvider,
+    createCharacterProvider,
+    getAllCharactersProvider,
   ],
   exports: [
     characterRepoProvider,
@@ -30,6 +34,8 @@ import { CharacterService } from './character.service';
     setCharacterRaceProvider,
     setCharacterClassProvider,
     setCharacterBackstoryProvider,
+    createCharacterProvider,
+    getAllCharactersProvider,
   ],
 })
 export class CharacterModule {}
